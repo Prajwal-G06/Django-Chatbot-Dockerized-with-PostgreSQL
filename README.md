@@ -22,22 +22,22 @@ Make sure you have installed:
 
 ---
 
-### 1️⃣ Clone the Repository
-```bash
- git clone https://github.com/your-username/django-chatbot-docker.git
- cd django-chatbot-docker
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/django-chatbot-docker.git
+   cd django-chatbot-docker
 
-### 2️⃣ Run with Docker Compose
-```bash
- docker-compose up --build -d
+2. **Run with Docker Compose**
+   ```bash
+   docker-compose up --build -d
 
-### 3️⃣ Access the Database
-To connect to the Postgres DB:
-```bash
- docker compose exec db psql -U chatbot_user -d chatbot_db
+3. **Access the Database**
+   To connect to the Postgres DB:
+   ```bash
+   docker compose exec db psql -U chatbot_user -d chatbot_db
 
- \dt; -- List tables
- SELECT * FROM chatbot_app_conversationhistory;
+   \dt; -- List tables
+   SELECT * FROM chatbot_app_conversationhistory;
 
 ## 🌍 Access the app here
 [Visit the live site here](http://ec2-13-201-77-129.ap-south-1.compute.amazonaws.com:8000/)
