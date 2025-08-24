@@ -1,0 +1,41 @@
+# Python cache & build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Databases
+*.db
+*.sqlite3
+
+# Environment files
+.env
+.env.*
+.envrc
+
+# Django generated
+media/
+staticfiles/
+static/
+
+# Virtual environments
+venv/
+env/
+*.lock
+.git
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+.gitignore

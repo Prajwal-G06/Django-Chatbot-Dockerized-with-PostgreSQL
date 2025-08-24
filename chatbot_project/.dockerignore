@@ -1,0 +1,42 @@
+# Python cache & build artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Databases
+*.db
+*.sqlite3
+
+# Environment files (don’t leak secrets)
+.env
+.env.*
+.envrc
+
+# Django generated
+media/
+staticfiles/
+static/
+
+# Virtual environments
+venv/
+env/
+*.lock
+
+# IDE / Editor stuff
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git
+.gitignore
+
+# Docker volumes (don’t copy host data into container)
+postgres_data/
+static_volume/
