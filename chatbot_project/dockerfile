@@ -24,4 +24,3 @@ EXPOSE 8000
 
 # Start server with Gunicorn (better for prod)
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "chatbot_project.wsgi:application"]
-
