@@ -18,7 +18,3 @@ phases:
   post_build:
     commands:
       - echo "Docker image successfully pushed: $REPO_URI:latest"
-
-artifacts:
-  files:
-    - '**/*'
