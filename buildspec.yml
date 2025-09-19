@@ -9,7 +9,13 @@ phases:
   build:
     commands:
       - echo Building Docker image...
-      - docker build -t $REPO_URI:latest .
+      - docker build -t $REPO_URI:latest -f chatbot_project/dockerfile chatbot_project
+      - echo Pushing Docker image to ECR...
       - docker push $REPO_URI:latest
+  post_build:
+    commands:
+      - echo "Docker image successfully pushed: $REPO_URI:latest"
+
+# No artifacts needed since Docker image is pushed to ECR
 artifacts:
-  files: '**/*'
+  files: []
