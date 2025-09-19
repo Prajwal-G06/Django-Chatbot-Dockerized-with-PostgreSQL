@@ -20,4 +20,5 @@ phases:
       - echo "Docker image successfully pushed: $REPO_URI:latest"
 
 artifacts:
-  files: []
+  files:
+    - '**/*'
