@@ -5,7 +5,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
-      - REPO_URI=959305806189.dkr.ecr.ap-south-1.amazonaws.com/chatbot
+      - REPO_URI=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/chatbot
   build:
     commands:
       - echo Building Docker image...
