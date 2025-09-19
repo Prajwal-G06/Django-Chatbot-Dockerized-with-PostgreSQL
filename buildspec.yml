@@ -15,7 +15,7 @@ phases:
       - docker push $REPO_URI:latest
   post_build:
     commands:
-      - echo "Docker image successfully pushed: $REPO_URI:latest"
+      - echo Docker image successfully pushed: $REPO_URI:latest
 
 # No artifacts needed since Docker image is pushed to ECR
 artifacts:
