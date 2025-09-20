@@ -11,5 +11,5 @@ docker pull 959305806189.dkr.ecr.ap-south-1.amazonaws.com/chatbot:latest
 cd /home/ubuntu/chatbot_app/chatbot_project
 
 echo ">>> Restarting containers..."
-docker compose down || true
-docker compose up -d
+docker-compose down || true
+docker-compose up -d
