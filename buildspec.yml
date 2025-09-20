@@ -11,7 +11,7 @@ phases:
   build:
     commands:
       - echo "Building Docker image..."
-      - docker build -t $REPO_URI:latest -f chatbot_project/dockerfile chatbot_project
+      - docker build -t $REPO_URI:latest -f chatbot_project/dockerfile .
       - echo "Pushing Docker image to ECR..."
       - docker push $REPO_URI:latest
 
