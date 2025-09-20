@@ -44,7 +44,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./chatbot_project/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
       - static_volume:/app/staticfiles
     depends_on:
       - web
