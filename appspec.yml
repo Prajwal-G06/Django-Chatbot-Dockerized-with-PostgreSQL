@@ -1,0 +1,9 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/chatbot_app
+hooks:
+  AfterInstall:
+    - location: chatbot_project/scripts/deploy.sh
+      runas: ubuntu
