@@ -21,15 +21,15 @@ done <<< "$PARAMS"
 
 echo ">>> Logging in to ECR..."
 aws ecr get-login-password --region ${REGION} \
- | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com
+ | docker login --username AWS --password-stdin ${ECR_REPO}
 
 echo ">>> Pulling latest image..."
-docker pull ${ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com/chatbot:latest
+docker pull ${ECR_REPO}:latest
 
 cd /home/ubuntu/chatbot_app/chatbot_project
 
 echo ">>> Restarting containers..."
-docker-compose down || true
-docker-compose up -d
+docker-compose down || true      # use the modern syntax
+docker-compose up -d             # restart with latest pulled image
 
 echo ">>> Deployment complete!"
