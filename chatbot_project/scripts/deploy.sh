@@ -2,7 +2,7 @@
 set -e
 
 REGION="ap-south-1"
-ACCOUNT_ID="<YOUR_AWS_ACCOUNT_ID>"
+ACCOUNT_ID="959305806189"
 ECR_REPO="$ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/chatbot"
 
 echo ">>> Fetching parameters from SSM Parameter Store..."
@@ -19,17 +19,17 @@ while read -r name value; do
   export "$key=$value"
 done <<< "$PARAMS"
 
-echo ">>> Logging in to Amazon ECR..."
-aws ecr get-login-password --region $REGION \
-  | docker login --username AWS --password-stdin $ECR_REPO
+echo ">>> Logging in to ECR..."
+aws ecr get-login-password --region ${REGION} \
+ | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com
 
-echo ">>> Pulling latest Docker image..."
-docker pull $ECR_REPO:latest
+echo ">>> Pulling latest image..."
+docker pull ${ACCOUNT_ID}.dkr.ecr.ap-south-1.amazonaws.com/chatbot:latest
 
 cd /home/ubuntu/chatbot_app/chatbot_project
 
-echo ">>> Restarting containers with new environment..."
-docker compose down || true
-docker compose up -d
+echo ">>> Restarting containers..."
+docker-compose down || true
+docker-compose up -d
 
 echo ">>> Deployment complete!"
