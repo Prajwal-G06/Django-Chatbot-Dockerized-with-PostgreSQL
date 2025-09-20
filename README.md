@@ -9,7 +9,8 @@ A containerized Django chatbot that uses PostgreSQL for storing conversation his
 - 🧠 Intelligent chatbot powered by **OpenAI GPT models**  
 - 💾 Persistent chat history stored in **PostgreSQL**  
 - 🐳 Fully containerized with **Docker & Docker Compose**  
-- ⚡ **Gunicorn** + **Whitenoise** for production-ready serving  
+- ⚡ **Gunicorn** behind **Nginx** for production-ready serving  
+- 🎨 Static files handled by Whitenoise + Nginx
 - 🔑 Easy configuration with environment variables  
 
 ---
