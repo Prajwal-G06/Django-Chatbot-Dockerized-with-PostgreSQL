@@ -12,7 +12,7 @@ phases:
     commands:
       - echo "Building Docker image..."
       # Build context = chatbot_project
-      - docker build -t $REPO_URI:latest -f dockerfile chatbot_project
+      - docker build -t $REPO_URI:latest -f chatbot_project/dockerfile ./chatbot_project
       - echo "Pushing Docker image to ECR..."
       - docker push $REPO_URI:latest
 
