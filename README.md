@@ -41,4 +41,4 @@ Make sure you have installed:
    SELECT * FROM chatbot_app_conversationhistory;
 
 ## 🌍 Access the app here
-[Visit the live site here](http://ec2-13-234-204-255.ap-south-1.compute.amazonaws.com/)
+[Visit the live site here](http://ec2-13-234-204-255.ap-south-1.compute.amazonaws.com:80)
